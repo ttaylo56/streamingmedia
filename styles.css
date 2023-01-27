@@ -1,0 +1,116 @@
+html {
+    background-color: #020659;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 834px;
+    margin: 0 auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+}
+
+header, footer {
+    background-color: #020873;
+    color: #fff;
+    border: 1px solid #020873;
+}
+
+header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav {
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    width: 130px;
+    height: 25px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.25em;
+    float: left;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+h3 {
+    padding-top: 25px;
+    padding-left: 25px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, p, img {
+    padding: 10px;
+}
+
+ul .muzak-maker {
+    visibility: hidden;
+    display:inline-block;
+}
+
+#smooth-jazz {
+    background: linear-gradient(90deg, #2104D9, #030A8C, #020659);
+    color: #fff;
+    padding: 1px 10px;
+    position: relative;
+}
+
+#trending {
+    background-color: #fff;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#playlists {
+    background-color: #fff;
+}
+
+audio::-webkit-media-controls-mute-button {
+
+}
+audio::-webkit-media-controls-play-button {
+
+}
+audio::-webkit-media-controls-enclosure {
+
+}
+
+#trending ::-webkit-scrollbar {
+display: block;
+width: 10em;
+}
+#trending ::-webkit-scrollbar-track {
+
+}
+#trending ::-webkit-scrollbar-thumb {
+
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
