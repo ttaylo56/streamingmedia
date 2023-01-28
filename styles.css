@@ -1,3 +1,54 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
 html {
     background-color: #020659;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -13,17 +64,21 @@ main {
     grid-template-columns: 3fr 3fr;
 }
 
-header, footer {
+header {
     background-color: #020873;
     color: #fff;
     border: 1px solid #020873;
 }
 
-header {
+footer {
+    background-color: #fff;
+}
+
+/* header {
     width: 100%;
     justify-content: space-between;
     align-items: baseline;
-}
+} */
 
 a {
     color: #fff;
@@ -31,37 +86,149 @@ a {
 }
 
 nav {
-    margin: 0;
+    margin: 20px 20px 20px 20px;
+    position: relative;
 }
 
 nav li {
     display: inline-block;
     width: 130px;
     height: 25px;
-    padding-left: 20px;
     text-align: center;
+    padding-bottom: 15px;
+}
+
+nav li:hover {
+    background-color: #590242;
+}
+
+a[href="#home"] {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: -10px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 h1 {
     font-size: 1.25em;
-    float: left;
-    margin-top: 10px;
-    margin-left: 50px;
+    line-height: 2em;
 }
 
-h3 {
+h1, h2, h3, #playlists dt {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2, h3, #playlists dt {
+    font-size: 1em;
+    color: #590242;
+    line-height: 2em;
+}
+
+/* #playlists img {
+    display: flex;
+    align-items: center;
+}
+
+#playlists div {
+    display: grid;
+    grid-template-rows: repeat(5, 100%);
+    float: right;
+} */
+
+p {
+    width: 200%;
+    margin: 20px 20px 20px 20px;
+    line-height: 20px;
+    font-size: 1em;
+}
+
+small {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: #590242;
+}
+
+#playlists h3, #curated h3, #playlists dt {
     padding-top: 25px;
     padding-left: 25px;
     margin: 0 auto;
 }
 
-h1, h2, h3, p, img {
-    padding: 10px;
+#playlists img, #curated img {
+    padding-left: 20px;
 }
 
-ul .muzak-maker {
-    visibility: hidden;
-    display:inline-block;
+/* h1, h2, h3, p, img {
+    padding: 10px;
+} */
+
+.scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scroll section {
+    margin: 10px;
+    position: relative;
+}
+
+.scroll div {
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,0.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+dl {
+    display: flex;
+}
+
+dt {
+    padding-right: 5px;
+}
+
+dl, dt {
+    color: #590242;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 1em;
+}
+
+audio {
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+
+.more {
+    text-decoration: none;
+    background-color: #590242;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    display: block;
+    text-align: center;
+    margin: 10px 10px 30px 32px;
+    float: right;
+}
+
+.more:hover {
+    background-color: #020659;
+}
+
+#smooth-jazz h2 {
+    color: white;
 }
 
 #smooth-jazz {
@@ -77,40 +244,45 @@ ul .muzak-maker {
     grid-column-end: 3;
 }
 
-#playlists {
+#playlists, #curated {
     background-color: #fff;
 }
 
 audio::-webkit-media-controls-mute-button {
-
+    background-color: #fff;
+    border-radius: 50%;
 }
 audio::-webkit-media-controls-play-button {
-
+    background-color: #fff;
+    border-radius: 50%;
 }
 audio::-webkit-media-controls-enclosure {
-
+    background-color: rgba(255,255,255,0.5);
 }
 
 #trending ::-webkit-scrollbar {
-display: block;
-width: 10em;
+    width: 15px;
 }
 #trending ::-webkit-scrollbar-track {
-
+    box-shadow: inset 0 0 15px #590242;
 }
 #trending ::-webkit-scrollbar-thumb {
-
+    background-color: #590242;
+    border-radius: 5px;
 }
 #trending ::-webkit-scrollbar-thumb:hover {
-
+    background-color: #020659;
 }
 #playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
-
+    width: 15px;
 }
 #playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
-
+    box-shadow: inset 0 0 15px #020659;
 }
 #playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
-
+    background: #020659;
+    border-radius: 5px;
 }
 #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
