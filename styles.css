@@ -31,6 +31,61 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -47,7 +102,7 @@ table {
 	border-spacing: 0;
 }
 
-
+/* my code starts below */
 
 html {
     background-color: #020659;
@@ -55,13 +110,22 @@ html {
 }
 
 body {
-    width: 834px;
+    max-width: 834px;
     margin: 0 auto;
 }
 
 main {
     display: grid;
     grid-template-columns: 3fr 3fr;
+}
+
+.logo {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.25em;
+    position: absolute;
+    top: 10px;
 }
 
 header {
@@ -166,6 +230,10 @@ small {
     float: left;
 }
 
+#playlists img:hover, #curated img:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 #playlists h2 {
     background-color: #fff;
     padding-left: 30px;
@@ -206,7 +274,6 @@ small {
 .scroll-vertical {
     display: grid;
     height: 60%;
-    grid-template-rows: repeat(5,1fr);
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -291,11 +358,21 @@ audio {
     padding-bottom: 15px;
 }
 
+.scroll-vertical .playlists-background:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
 .scroll-vertical .curated-background {
     background: #020659;
     margin: 10px;
     border-radius: 10px;
     padding-bottom: 15px;
+}
+
+.scroll-vertical .curated-background:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
 }
 
 .playlists-background p {
@@ -353,3 +430,81 @@ audio::-webkit-media-controls-enclosure {
     background: #fff;
 }
 
+@media screen and (min-width:834px) {
+
+    .logo {
+        position: static;
+    }
+
+    nav {
+        margin-bottom: 50px;
+    }
+
+    ul {
+        overflow: visible;
+    }
+    label span, input {
+        display: none;
+    }
+
+    label {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .scroll-vertical {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        overflow-x: auto;
+        overflow-y: hidden;
+        }
+
+        main {
+            display: block;
+        }
+
+        .playlists{
+            background: #0d8dfb;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            overflow-x:auto;
+            overflow-y:hidden;
+            padding: 10px;
+        }
+
+        .curated{
+            background: #020873;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding: 10px;
+          }
+
+          .more {
+            float: none;
+            position: relative;
+            z-index: 1;
+          }
+
+          footer {
+            border-top: #fff solid 0px;
+            margin-top: 0px;
+          }
+
+          #trending {
+            padding-bottom: 1px;
+          }
+}
+
+@media screen and (max-width: 575px) {
+    .nav-items {
+        width: 30px;
+    }
+}
