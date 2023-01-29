@@ -454,6 +454,27 @@ audio::-webkit-media-controls-enclosure {
 
 @media screen and (max-width: 834px) {
 
+    body {
+        max-width: 375px;
+    }
+
+    ul {
+        display: block;
+    }
+
+    .logo {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        left: 120px;
+    }
+
+    .nav-items {
+        position: relative;
+        width: 10px;
+        left: 105px;
+    }
+
     .scroll-vertical {
         display: grid;
         grid-template-columns: repeat(5,1fr);
