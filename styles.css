@@ -452,7 +452,7 @@ audio::-webkit-media-controls-enclosure {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 834px) {
 
     .scroll-vertical {
         display: grid;
@@ -463,6 +463,11 @@ audio::-webkit-media-controls-enclosure {
 
         main {
             display: block;
+            background-color: #fff;
+        }
+
+        body {
+            background-color: #fff;
         }
 
         .playlists{
@@ -473,6 +478,16 @@ audio::-webkit-media-controls-enclosure {
             overflow-x:auto;
             overflow-y:hidden;
             padding: 10px;
+        }
+
+        .playlists-background p {
+            position: relative;
+            display: block;
+        }
+
+        .curated-background p {
+            position: relative;
+            display: block;
         }
 
         .curated{
@@ -501,6 +516,14 @@ audio::-webkit-media-controls-enclosure {
           #trending {
             padding-bottom: 1px;
           }
+
+          #smooth-jazz p {
+            width: fit-content;
+        }
+
+        #playlists img, #curated img {
+            padding-left: 28px;
+        }
 }
 
 @media screen and (max-width: 575px) {
