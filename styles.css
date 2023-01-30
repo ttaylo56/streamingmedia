@@ -171,7 +171,7 @@ nav li:hover {
 a[href="#home"] {
     font-weight: bold;
     font-size: 20px;
-    margin-left: -10px;
+    margin-left: 3px;
 }
 
 ul {
@@ -466,13 +466,12 @@ audio::-webkit-media-controls-enclosure {
         display: flex;
         position: absolute;
         top: 10px;
-        left: 120px;
+        left: 105px;
     }
 
     .nav-items {
         display: block;
         position: relative;
-        width: 10px;
         left: 105px;
     }
 
